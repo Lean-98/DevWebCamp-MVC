@@ -22,11 +22,11 @@ class Email {
          // create a new object
          $mail = new PHPMailer();
          $mail->isSMTP();
-         $mail->Host = $_ENV['EMAIL_HOST'];
+         $mail->Host = $_ENV['MAIL_HOST'];
          $mail->SMTPAuth = true;
-         $mail->Port = $_ENV['EMAIL_PORT'];
-         $mail->Username = $_ENV['EMAIL_USER'];
-         $mail->Password = $_ENV['EMAIL_PASS'];
+         $mail->Port = $_ENV['MAIL_PORT'];
+         $mail->Username = $_ENV['MAIL_USER'];
+         $mail->Password = $_ENV['MAIL_PASS'];
      
          $mail->setFrom('cuentas@devwebcamp.com');
          $mail->addAddress($this->email, $this->nombre);
@@ -97,7 +97,7 @@ class Email {
         <h2>¡Gracias por registrarte!</h2>
         <p>Por favor confirma tu correo electrónico para que puedas comenzar a disfrutar de todas los servicios de
             DevWebCamp</p>
-        <a href='" . $_ENV['HOST'] . "/confirmar-cuenta?token=" . $this->token . "'><button>Verificar</button></a>
+        <a href='" . $_ENV['SERVER_HOST'] . "/confirmar-cuenta?token=" . $this->token . "'><button>Verificar</button></a>
         <p>Si tú no te registraste en DevWebCamp, por favor ignora este correo electrónico.</p>
         <div><p></p></div>
         <p><span>Este correo electrónico fue enviado desde una dirección solamente de notificaciones que no puede aceptar correo electrónico entrante. Por favor no respondas a este mensaje.</span></p>
@@ -114,11 +114,11 @@ class Email {
         // create a new object
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = $_ENV['EMAIL_HOST'];
+        $mail->Host = $_ENV['MAIL_HOST'];
         $mail->SMTPAuth = true;
-        $mail->Port = $_ENV['EMAIL_PORT'];
-        $mail->Username = $_ENV['EMAIL_USER'];
-        $mail->Password = $_ENV['EMAIL_PASS'];
+        $mail->Port = $_ENV['MAIL_PORT'];
+        $mail->Username = $_ENV['MAIL_USER'];
+        $mail->Password = $_ENV['MAIL_PASS'];
     
         $mail->setFrom('cuentas@devwebcamp.com');
         $mail->addAddress($this->email, $this->nombre);
@@ -186,7 +186,7 @@ class Email {
     <body>
         <h1>DevWebCamp</h1>
         <h2> Hola $this->nombre Has solicitado reestablecer tu password, sigue el siguiente enlace para hacerlo:</h2>
-        <a href='" . $_ENV['HOST'] . "/reestablecer?token=" . $this->token . "'><button>Reestablecer Password</button></a>
+        <a href='" . $_ENV['SERVER_HOST'] . "/reestablecer?token=" . $this->token . "'><button>Reestablecer Password</button></a>
         <p>Si tú no solicitaste el cambio en tu cuenta de DevWebCamp, por favor ignora este correo electrónico.</p>
         <div><p></p></div>
         <p><span>Este correo electrónico fue enviado desde una dirección solamente de notificaciones que no puede aceptar correo electrónico entrante. Por favor no respondas a este mensaje.</span></p>
